@@ -1,3 +1,10 @@
+//  Computo Movil
+//  Grupo:1
+//  Alumno: Alejandro Manuel Hernández García
+//
+//    Actividad 1
+//
+
 import 'package:actividad_1/act1.dart';
 import 'package:flutter/material.dart';
 
@@ -11,5 +18,5 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Act1(),
     );
-  }    
+  }
 }

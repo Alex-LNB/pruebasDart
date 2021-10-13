@@ -1,4 +1,9 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+//  Computo Movil
+//  Grupo:1
+//  Alumno: Alejandro Manuel Hernández García
+//
+//    Actividad 1
+//
 
 import 'package:flutter/material.dart';
 
