@@ -1,6 +1,7 @@
 //  Computo Movil
 //  Grupo:1
 //  Alumno: Alejandro Manuel Hernández García
+//  Correo: ale5jan5dro@hotmail.com
 //
 //    Actividad 1
 //
