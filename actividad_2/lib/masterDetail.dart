@@ -1,4 +1,13 @@
-// ignore_for_file: prefer_const_constructors, file_names, camel_case_types, use_key_in_widget_constructors
+//  Computo Movil
+//  Grupo:1
+//  Alumnos:  Alejandro Manuel Hernández García, ale5jan5dro@hotmail.com
+//            nombre, correo
+//            nombre, correo
+//
+//    Actividad 2
+//
+
+// ignore_for_file: prefer_const_constructors, file_names, camel_case_types, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:actividad_2/datos.dart';
 import 'package:actividad_2/detailPage.dart';
@@ -9,7 +18,11 @@ class masterDetail extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: encabezado(),
+        title: Card(
+          child: encabezado(),
+          color: Colors.blue[300],
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),),
+        ),
       ),
       body: ListView.builder(
         itemCount: 15,
@@ -22,11 +35,13 @@ class masterDetail extends StatelessWidget{
 
   Widget encabezado(){
     return ListTile(
-      title: Text('Restaurante'),
-      subtitle: Text('Direccion'),
-      leading: Icon(Icons.location_pin),
-      trailing: Icon(Icons.refresh),
-      hoverColor: Colors.blueGrey,
+      title: Text('Delicias Mexicanas Restaurant',style: TextStyle(fontSize: 15),),
+      subtitle: Column(
+        children: [
+          Text('Tacuba #100, Centro Historico, CDMX, México',style: TextStyle(fontSize: 12),),
+        ],
+      ),
+      leading: Icon(Icons.location_pin, size: 30),
     );
   }
 
@@ -38,33 +53,46 @@ class masterDetail extends StatelessWidget{
 
   Widget contenido(BuildContext context, int index){
     return ListTile(
-      title: Text(comidas[index]),
-      subtitle: Text('descripcion'),
-      leading: Icon(Icons.food_bank_sharp),
+      title: Text(comidas[index][0]),
+      subtitle: Text(comidas[index][1]),
+      leading: myImage(index),
       trailing: Column(
         children: [
-          Text('\$precio'),
-          TextButton(
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => detailPage(index),
-                )
-              );
-            },
-            child: Text('Comprar'),
+          Expanded(child: Text(comidas[index][2])),
+          Expanded(
+            flex:2,
+            child: Container(
+              height:400,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                color: Colors.blue[100],
+              ),
+              child: TextButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => detailPage(index),
+                    )
+                  );
+                },
+                child: Text('View'),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Text(comidas[index][4], style: TextStyle(color: Colors.amber)),
           ),
         ],
       ),
-      /*onTap: (){
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => detailPage(),
-          )
-        );
-      }*/
+    );
+  }
+
+  Widget myImage(int indice){
+    return Image.asset(
+      comidas[indice][3],
+      width: 50,
+      height: 50,
     );
   }
 

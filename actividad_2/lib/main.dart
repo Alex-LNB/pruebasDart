@@ -1,3 +1,12 @@
+//  Computo Movil
+//  Grupo:1
+//  Alumnos:  Alejandro Manuel Hernández García, ale5jan5dro@hotmail.com
+//            nombre, correo
+//            nombre, correo
+//
+//    Actividad 2
+//
+
 import 'package:actividad_2/detailPage.dart';
 import 'package:actividad_2/masterDetail.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +21,6 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       title: 'Actividad 2',
       home: masterDetail(),
-      /*routes: {
-        '/' : (context) => masterDetail(),
-        '/second' : (context) => detailPage(),
-      },*/
     );
   }
 
