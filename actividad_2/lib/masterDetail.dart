@@ -1,8 +1,8 @@
 //  Computo Movil
 //  Grupo:1
 //  Alumnos:  Alejandro Manuel Hernández García, ale5jan5dro@hotmail.com
-//            nombre, correo
-//            nombre, correo
+//            Felix Flores Paul Jaime, pjff18@gmail.com
+//            Andrew Blaise Sánchez Espinosa, andrewblaise@comunidad.unam.mx
 //
 //    Actividad 2
 //
@@ -12,6 +12,7 @@
 import 'package:actividad_2/datos.dart';
 import 'package:actividad_2/detailPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class masterDetail extends StatelessWidget{
   @override
@@ -41,7 +42,7 @@ class masterDetail extends StatelessWidget{
           Text('Tacuba #100, Centro Historico, CDMX, México',style: TextStyle(fontSize: 12),),
         ],
       ),
-      leading: Icon(Icons.location_pin, size: 30),
+      leading: Icon(Icons.restaurant_menu, size: 30),
     );
   }
 
@@ -54,17 +55,35 @@ class masterDetail extends StatelessWidget{
   Widget contenido(BuildContext context, int index){
     return ListTile(
       title: Text(comidas[index][0]),
-      subtitle: Text(comidas[index][1]),
+      subtitle: Column(
+        children: [
+          Text(comidas[index][1]),
+          Row(
+            textDirection: TextDirection.rtl,
+            children: [
+              Text('   '+comidas[index][2], style: TextStyle(color: Colors.green),),
+              RatingBar.builder(
+                itemBuilder: (context, _) => Icon(Icons.star_border, color: Colors.amber),
+                onRatingUpdate: (rating){
+                  print(rating);
+                },
+                initialRating: double.parse(comidas[index][4]),
+                itemSize: 20,
+              ),
+            ],
+          ),
+        ],
+      ),
       leading: myImage(index),
-      trailing: Column(
+      trailing: /*Column(
         children: [
           Expanded(child: Text(comidas[index][2])),
           Expanded(
             flex:2,
-            child: Container(
+            child: */Container(
               height:400,
               decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
+                shape: BoxShape.circle,
                 color: Colors.blue[100],
               ),
               child: TextButton(
@@ -78,13 +97,22 @@ class masterDetail extends StatelessWidget{
                 },
                 child: Text('View'),
               ),
-            ),
+            ),/*
           ),
           Expanded(
             child: Text(comidas[index][4], style: TextStyle(color: Colors.amber)),
+            /*child: Center(
+              child: RatingBar.builder(
+                itemBuilder: (context, _) => Icon(Icons.star_border, color: Colors.amber),
+                onRatingUpdate: (rating){
+                  print(rating);
+                },
+                initialRating: double.parse(comidas[index][4]),
+              ),
+            ),*/
           ),
         ],
-      ),
+      ),*/
     );
   }
 

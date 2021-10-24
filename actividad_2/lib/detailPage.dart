@@ -1,8 +1,8 @@
 //  Computo Movil
 //  Grupo:1
 //  Alumnos:  Alejandro Manuel Hernández García, ale5jan5dro@hotmail.com
-//            nombre, correo
-//            nombre, correo
+//            Felix Flores Paul Jaime, pjff18@gmail.com
+//            Andrew Blaise Sánchez Espinosa, andrewblaise@comunidad.unam.mx
 //
 //    Actividad 2
 //
@@ -11,6 +11,7 @@
 
 import 'package:actividad_2/datos.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class detailPage extends StatelessWidget {
   final int indice;
@@ -32,14 +33,26 @@ class detailPage extends StatelessWidget {
               child: Text(comidas[indice][1], textAlign: TextAlign.center, style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
             ),
           ),
-          Expanded(
+          /*Expanded(
             child: Center(
               child: Text(comidas[indice][4], style: TextStyle(fontSize: 20, color: Colors.amber)),
+            ),
+          ),*/
+          Expanded(
+            child: Center(
+              child: RatingBar.builder(
+                itemBuilder: (context, _) => Icon(Icons.star_border, color: Colors.amber),
+                onRatingUpdate: (rating){
+                  print(rating);
+                },
+                initialRating: double.parse(comidas[indice][4]),
+                //itemSize: 10,
+              ),
             ),
           ),
           Expanded(
             child: Center(
-              child: Text(comidas[indice][2], style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic)),
+              child: Text(comidas[indice][2], style: TextStyle(fontSize: 20, color: Colors.green)),
             ),
           ),
           Expanded(

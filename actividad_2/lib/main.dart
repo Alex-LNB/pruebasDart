@@ -1,8 +1,8 @@
 //  Computo Movil
 //  Grupo:1
 //  Alumnos:  Alejandro Manuel Hernández García, ale5jan5dro@hotmail.com
-//            nombre, correo
-//            nombre, correo
+//            Felix Flores Paul Jaime, pjff18@gmail.com
+//            Andrew Blaise Sánchez Espinosa, andrewblaise@comunidad.unam.mx
 //
 //    Actividad 2
 //

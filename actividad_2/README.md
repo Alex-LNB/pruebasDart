@@ -7,5 +7,5 @@ Grupo: 1
 Alumnos:
 
 - Alejandro Manuel Hernández García
-- nombre
-- nombre
+- Felix Flores Paul Jaime
+- Andrew Blaise Sánchez Espinosa
